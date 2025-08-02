@@ -2,10 +2,24 @@ package kube
 
 import (
 	"k8s.io/api/core/v1"
+	apps_v1 "k8s.io/api/apps/v1"
 )
 
 service: [string]: v1.#Service
+service: [Name=_]: {
+	metadata: name: Name
+}
+
+deployment: [string]: apps_v1.#Deployment
+deployment: [Name=_]: {
+	metadata: name: Name
+}
 
 objects: [
-	for k, v in service {v},
+	for obj in objectsList
+	for k, v in obj {v},
+]
+
+objectsList: [
+	service, deployment,
 ]
