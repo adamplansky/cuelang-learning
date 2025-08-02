@@ -5,8 +5,8 @@ import (
 	"encoding/yaml"
 )
 
-// cue cmd gen ./data
-command: gen: {
+// cue cmd dump ./deploy/dev
+command: dump: {
 	task: print: cli.Print & {
 		text: yaml.MarshalStream(objects)
 	}

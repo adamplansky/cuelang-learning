@@ -5,6 +5,8 @@ import (
 	apps_v1 "k8s.io/api/apps/v1"
 )
 
+#KUBECONTEXT!: string
+
 service: [string]: v1.#Service
 service: [Name=_]: {
 	metadata: name: Name
