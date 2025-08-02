@@ -34,8 +34,18 @@ root: "b"
 cue eval ./parent:b
 root: "b"
 
+!!!!!!!!!!!! Always use ./xx/y for relative path
 cue eval parent/b:b
 standard library import path "parent/b:b" cannot be imported as a CUE package
+
+
+cue eval github.com/adamplansky/cuelang-learning/mod-evaluation:a
+"exported-from-different-package":        "a"
+"exported-from-different-package-schema": "a"
+labels: {
+    name:  "Adam"
+    color: "green"
+}
 
 cue eval ./parent/b:b
 b:    "b"
