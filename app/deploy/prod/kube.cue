@@ -2,8 +2,9 @@ package kube
 
 #KUBECONTEXT: "prod"
 
-input: {
-	name:      "nginx"
-	namespace: "prod-nginx"
-	replicas:  10
+App: "nginx-prod": {
+	Namespace:     "nginx-prod"
+	Replicas:      10
+	ContainerPort: 80
+	Image:         "nginx-prod:latest"
 }

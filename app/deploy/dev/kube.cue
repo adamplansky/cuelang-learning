@@ -2,8 +2,9 @@ package kube
 
 #KUBECONTEXT: "minikube"
 
-input: {
-	name:      "nginx-dev"
-	namespace: "my-namespace"
-	replicas:  3
+App: "nginx-dev": {
+	Namespace:     "nginx"
+	Replicas:      3
+	ContainerPort: 80
+	Image:         "nginx:latest"
 }
